@@ -604,7 +604,7 @@ body::-webkit-scrollbar-thumb
   margin: 10px 0 0 10px;
   white-space: nowrap;
   overflow: hidden;
-  width: 30em;
+  width: 100%;
   animation: type 4s steps(60, end);
 }
 
