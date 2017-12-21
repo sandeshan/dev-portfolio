@@ -372,9 +372,12 @@ footer {
   right: 0;
   bottom: 0;
   left: 0;
-  border: 2px solid #3c7dcf;
   border-radius: 0;
   box-shadow: none;
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+  border-bottom-left-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
 }
 
 .modal-header {
@@ -386,18 +389,20 @@ footer {
   padding: 10px;
   background: rgba(33,125,187,0.8);
   border: 0;
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
 }
 
 .modal-title {
   font-size: 2em;
-  color: #000;
+  color: #fff;
   line-height: 30px;
 }
 
 .modal-body {
   position: absolute;
   top: 50px;
-  bottom: 60px;
+  bottom: 30px;
   width: 100%;
   font-weight: 300;
   overflow: auto;
@@ -411,6 +416,13 @@ footer {
   height: 60px;
   padding: 10px;
   background: #f1f3f5;
+  border-bottom-left-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+}
+
+.close {
+  color: #fff;
+  opacity: 1;
 }
 
 body::-webkit-scrollbar-track
@@ -457,6 +469,8 @@ body::-webkit-scrollbar-thumb
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
+    cursor: default;
+    user-select: none;
 
     h1, h2 {
         margin: 0;
@@ -472,7 +486,7 @@ body::-webkit-scrollbar-thumb
     }
 
     h2 {
-        color: lighten($base-color, 25%);
+        color: rgba(255, 255, 255 ,0.8);
         font-weight: 500;
         font-size: 2.25em;
         margin-bottom: 15px;
@@ -581,6 +595,43 @@ body::-webkit-scrollbar-thumb
   margin-left: 10px;
   font-size: 18px;
   font-weight: 400;
+}
+
+@-webkit-keyframes typing { from { width: 0; } }
+@-webkit-keyframes blink-caret { 50% { border-color: transparent; } }
+
+.lead-blink{
+  margin: 10px 0 0 10px;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 30em;
+  animation: type 4s steps(60, end);
+}
+
+.lead-blink:nth-child(2){
+  animation: type2 8s steps(60, end);
+}
+
+.lead-blink span{
+  animation: blink 1s infinite;
+}
+
+@keyframes type{
+  from { width: 0; }
+}
+
+@keyframes type2{
+  0%{width: 0;}
+  50%{width: 0;}
+  100%{ width: 100; }
+}
+
+@keyframes blink{
+  to{opacity: .0;}
+}
+
+::selection{
+  background: black;
 }
 
 /*
